@@ -217,12 +217,14 @@ function exibirSalario() {
 
 
 //Condicionais
+
+var quantidaNumeros = 10;
 var vet=[];
-var vetImpar=[];
-for (i=0;i < 10; i++) {
+for (i=0;i < quantidaNumeros; i++) {
     //console.log(`O indice i=${i} do vetor vet[${i}]vai receber o valor ${i+1}`);
     vet[i]=i+1;
 }
+
 function contarPares(){ //retorna a quantidade de numeros pares
     var contPares = 0; //armazenar a quantidade de pares no vetor
     for(i=0; i<vet.length; i++){ //varrer o vetor vet
@@ -235,20 +237,43 @@ function contarPares(){ //retorna a quantidade de numeros pares
     return contPares;
 }
 
-function contarImpares(){
-    
+function contarImpares(){ //retorna a quantidade de numeros pares
+    var contImpares = 0; //armazenar a quantidade de pares no vetor
+    for(i=0; i<vet.length; i++){ //varrer o vetor vet
+        if(vet[i]%2==1){ //se a posicao do vetor for par, contImpares incrementa 1
+            console.log("achou um impar" + vet[i]);
+            contImpares++; //contImpares = contImpares+1;
+        }
+    }
+    console.log( contImpares+ " numeros Imprares");
+    return contImpares ;
 }
 
-var vetPar=[contarPares()];
 
 
+var vetPar=[];
+var vetImpar=[];
 
+for (i=0, y=0, x=0;i < vet.length; i++) {
+    if(vet[i]%2==0){
+        vetPar[y]=vet[i];
+        y++;
+    }else{
+        vetImpar[x]=vet[i];
+        x++;
+    }
+}
 
-
+var vetor = {
+    vet:[],
+    pares: 0,
+    impares: 0,
+}
 
 console.log(vet);
 console.log(vetPar);
 console.log(vetImpar);
+
 // var j=10;
 
 // while(j>=1){
