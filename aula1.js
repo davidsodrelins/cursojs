@@ -143,13 +143,13 @@ function calcularIR() {
         //console.log("ISENTO");
         return 0;
     } else if (pegarSalario() > 1000 && pegarSalario() < 3000) {
-       // console.log("sua aliquota de IR é de 10%");
+        // console.log("sua aliquota de IR é de 10%");
         return pegarSalario() * 0.10;
     } else if (pegarSalario() >= 3000 && pegarSalario() < 10000) {
-       // console.log("sua aliquota de IR é de 15%");
+        // console.log("sua aliquota de IR é de 15%");
         return pegarSalario() * 0.15;
     } else if (pegarSalario() >= 10000) {
-       // console.log("sua aliquota de IR é de 50%");
+        // console.log("sua aliquota de IR é de 50%");
         return pegarSalario() * 0.5;
     }
 }
@@ -174,7 +174,7 @@ function exibirSalario() {
     //console.log("IR = " + calcularIR());
     return pegarSalario() - calcularINSS() - calcularIR();
 }
-console.log(exibirSalario());
+//console.log(exibirSalario());
 
 
 // var idade = 18;
@@ -217,8 +217,51 @@ console.log(exibirSalario());
 
 
 //Condicionais
+var vet=[];
+var vetImpar=[];
+for (i=0;i < 10; i++) {
+    //console.log(`O indice i=${i} do vetor vet[${i}]vai receber o valor ${i+1}`);
+    vet[i]=i+1;
+}
+function contarPares(){ //retorna a quantidade de numeros pares
+    var contPares = 0; //armazenar a quantidade de pares no vetor
+    for(i=0; i<vet.length; i++){ //varrer o vetor vet
+        if(vet[i]%2==0){ //se a posicao do vetor for par, contPares incrementa 1
+            console.log("achou um par" + vet[i]);
+            contPares++; //contPares = contPares+1;
+        }
+    }
+    console.log(contPares + " numeros pares");
+    return contPares;
+}
+
+function contarImpares(){
+    
+}
+
+var vetPar=[contarPares()];
 
 
+
+
+
+
+console.log(vet);
+console.log(vetPar);
+console.log(vetImpar);
+// var j=10;
+
+// while(j>=1){
+//     console.log(j);
+//     j--;
+// }
+// console.log(" ");
+
+// var k=1;
+// do{
+//     console.log(k);
+//     k++;
+// }while(k<=10);
 
 
 
