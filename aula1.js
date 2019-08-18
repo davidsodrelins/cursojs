@@ -134,62 +134,86 @@
  * exibirSalario
  */
 function pegarSalario() { //Simular o BD
-    var salario = 1000;
+    var salario = 10000;
     return salario;
 }
 
-function calcularINSS() {
-    return pegarSalario() * 0.11;
+function calcularIR() {
+    if (pegarSalario() <= 1000) {
+        //console.log("ISENTO");
+        return 0;
+    } else if (pegarSalario() > 1000 && pegarSalario() < 3000) {
+       // console.log("sua aliquota de IR é de 10%");
+        return pegarSalario() * 0.10;
+    } else if (pegarSalario() >= 3000 && pegarSalario() < 10000) {
+       // console.log("sua aliquota de IR é de 15%");
+        return pegarSalario() * 0.15;
+    } else if (pegarSalario() >= 10000) {
+       // console.log("sua aliquota de IR é de 50%");
+        return pegarSalario() * 0.5;
+    }
 }
 
-function calcularIR() {
-    return pegarSalario() * 0.06;
+
+function calcularINSS() {
+    if (pegarSalario() <= 2000) {
+        //console.log("sua aliquota de INSS é de 8%");
+        return pegarSalario() * 0.08;
+    } else if (pegarSalario() > 2000 && pegarSalario() < 3000) {
+        //console.log("sua aliquota de INSS é de 9%");
+        return pegarSalario() * 0.09;
+    } else if (pegarSalario() >= 3000) {
+        //console.log("sua aliquota de INSS é de 11%");
+        return pegarSalario() * 0.11;
+    }
 }
 
 function exibirSalario() {
-    return pegarSalario() -
-        calcularINSS() - calcularIR();
+    //console.log("salario = " + pegarSalario());
+    //console.log("INSS  = " + calcularINSS());
+    //console.log("IR = " + calcularIR());
+    return pegarSalario() - calcularINSS() - calcularIR();
 }
 console.log(exibirSalario());
 
 
-var idade = 18;
-var genero = 'F';
+// var idade = 18;
+// var genero = 'F';
 
-if (!(idade >= 18 || genero == 'F') ){
-    console.log("é maior OU é mulher comum");
-} else
-    if (idade >= 18 || genero == 'M') {
-        console.log("é maior OU é homem comum");
-    } else
-        if (idade < 18) {
-            console.log("é de menor");
-        } else {
-            console.log("Qualquer coisa...")
-        }
+// if (!(idade >= 18 || genero == 'F')) {
+//     console.log("é maior OU é mulher comum");
+// } else
+//     if (idade >= 18 || genero == 'M') {
+//         console.log("é maior OU é homem comum");
+//     } else
+//         if (idade < 18) {
+//             console.log("é de menor");
+//         } else {
+//             console.log("Qualquer coisa...")
+//         }
 
 
-switch (genero) {
-    case 'GF':
-        console.log('Gênero Fluido');
-        break;
-    case 'NB':
-        console.log('Não binário');
+// switch (genero) {
+//     case 'GF':
+//         console.log('Gênero Fluido');
+//         break;
+//     case 'NB':
+//         console.log('Não binário');
 
-        break;
-    case 'M':
-        console.log('Masculino');
+//         break;
+//     case 'M':
+//         console.log('Masculino');
 
-        break;
-    case 'F':
-        console.log('Feminino');
+//         break;
+//     case 'F':
+//         console.log('Feminino');
 
-        break;
+//         break;
 
-    default:
-        console.log("vai passar maaaaaal");
-        break;
-}
+//     default:
+//         console.log("vai passar maaaaaal");
+//         break;
+// }
 
 
 //Condicionais
